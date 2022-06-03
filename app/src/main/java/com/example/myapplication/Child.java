@@ -1,10 +1,7 @@
 package com.example.myapplication;
 
 public class Child {
-    public String  firstName, lastName, fatherName, birthDay, height = "", weight = "";
-
-    public Child() {
-    }
+    public String  firstName, lastName, fatherName, birthDay;
 
     public Child(String firstName, String lastName, String fatherName, String birthDay) {
         this.firstName = firstName;
@@ -12,6 +9,7 @@ public class Child {
         this.fatherName = fatherName;
         this.birthDay = birthDay;
     }
+    public Child(){}
 
 
     public String getFirstName() {
@@ -29,4 +27,6 @@ public class Child {
     public String getBirthDay() {
         return birthDay;
     }
+
+
 }

@@ -57,9 +57,7 @@ public class MainActivity extends AppCompatActivity {
         rv.setAdapter(rvAdapter);
 
     }
-    private void init(){
 
-    }
 
 
     @Override
@@ -78,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
     ValueEventListener vListener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
-        childList.clear();
+//        childList.clear();
         for (DataSnapshot ds : snapshot.getChildren())
         {
             Child child = ds.getValue(Child.class);
-            assert child != null;
+//            assert child != null;
             childList.add(child);
         }
         }
