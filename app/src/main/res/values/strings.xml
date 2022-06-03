@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="head">Голова</string>
+    <string name="weight">Вес</string>
+    <string name="height">Рост</string>
+    <string name="add_child">Добавление ребенка</string>
+    <string name="add_child_button">добавить ребенка</string>
+    <string name="Name">Имя</string>
+    <string name="father_name">Отчество</string>
+    <string name="birthday">ДД.ММ.ГГГГ</string>
+    <string name="lastName">Фамилия</string>
+    <string-array name="SmesiNames">
+        <item>Нутрилон 1 с рождения</item>
+        <item>Нутрилон Пре 1 (с 1800 грамм)</item>
+        <item>Нутрилон Пепти гастро</item>
+        <item>Нутрилон Пре0</item>
+        <item>Нутрилон Пре 1</item>
+        <item>Similac Premium</item>
+        <item>Similac NEO шур</item>
+        <item>Пре NAN</item>
+        <item>Similac Особая Забота</item>
+    </string-array>
+</resources>
