@@ -64,8 +64,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="355dp"
-        android:layout_height="436dp"
+        android:layout_width="369dp"
+        android:layout_height="381dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -119,29 +119,25 @@
             android:minHeight="48dp"
             android:padding="10dp" />
 
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:entries="@array/SmesiNames"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="85dp"
-            android:layout_marginTop="10dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:orientation="horizontal">
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
-                android:layout_width="171dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:background="@drawable/custom_input"
-                android:ems="10"
-                android:hint="@string/weight"
-                android:inputType="textPersonName"
-                android:minHeight="48dp"
-                android:padding="10dp" />
-
-            <EditText
                 android:id="@+id/Age"
-                android:layout_width="178dp"
-                android:layout_height="wrap_content"
+                android:layout_width="379dp"
+                android:layout_height="match_parent"
                 android:layout_marginRight="5dp"
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
@@ -151,16 +147,19 @@
                 android:minHeight="48dp"
                 android:padding="10dp" />
 
+            <EditText
+                android:id="@+id/editTextTextPersonName7"
+                android:layout_width="369dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="@string/weight"
+                android:inputType="textPersonName"
+                android:minHeight="48dp"
+                android:padding="10dp" />
         </LinearLayout>
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_input"
-            android:entries="@array/SmesiNames"
-            android:padding="10dp" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
