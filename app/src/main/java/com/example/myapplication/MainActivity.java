@@ -27,10 +27,9 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     FirebaseUser fUser;
     DatabaseReference mDataBase;
-    ArrayList<Child> arrayList;
-    List<Child> childList;
+    ArrayList<Child>childList = new ArrayList<Child>();
     RecyclerView rv;
-    ArrayAdapter<Child> adapter;
+    RvAdapter adapter;
 
 
 
@@ -45,16 +44,13 @@ public class MainActivity extends AppCompatActivity {
         childList = new ArrayList<>();
         mDataBase = FirebaseDatabase.getInstance().getReference("Child");
         rv = findViewById(R.id.rv1);
-        arrayList = new ArrayList<>();
-
-        getDataDB();
-
-        arrayList.addAll(childList);
-        RvAdapter rvAdapter = new RvAdapter(arrayList);
+        adapter = new RvAdapter(childList);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplication(), LinearLayoutManager.VERTICAL, false);
         rv.setLayoutManager(linearLayoutManager);
-        rv.setAdapter(rvAdapter);
+        rv.setAdapter(adapter);
+        getDataDB();
+
 
     }
 
@@ -76,13 +72,14 @@ public class MainActivity extends AppCompatActivity {
     ValueEventListener vListener = new ValueEventListener() {
         @Override
         public void onDataChange(@NonNull DataSnapshot snapshot) {
-//        childList.clear();
+        childList.clear();
         for (DataSnapshot ds : snapshot.getChildren())
         {
             Child child = ds.getValue(Child.class);
-//            assert child != null;
+            assert child != null;
             childList.add(child);
         }
+        adapter.notifyDataSetChanged();
         }
         @Override
         public void onCancelled(@NonNull DatabaseError error) {

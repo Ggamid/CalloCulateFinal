@@ -3,15 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#BFFFF6"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
     tools:layout_editor_absoluteX="-16dp"
     tools:layout_editor_absoluteY="-24dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="374dp"
-        android:layout_height="135dp"
+        android:layout_width="343dp"
+        android:layout_height="121dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/borderradius"
@@ -19,11 +19,36 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="397dp"
+            android:layout_height="191dp"
+
+            android:layout_marginTop="-25dp"
+            android:layout_marginEnd="-100dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/item_vector" />
+
+        <TextView
+            android:id="@+id/LastName"
+
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/tttravels_bold"
+            android:text="Халидов"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <TextView
             android:id="@+id/FatherName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/tttravels_bold"
             android:text="Наврузбекович"
@@ -33,24 +58,10 @@
             app:layout_constraintTop_toBottomOf="@+id/Name" />
 
         <TextView
-            android:id="@+id/LastName"
-
-            android:layout_width="wrap_content"
-            android:layout_height="29dp"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="8dp"
-            android:fontFamily="@font/tttravels_bold"
-            android:text="Халидов"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
             android:id="@+id/BirthDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/tttravels_bold"
             android:text="28.05.2005"
@@ -63,7 +74,7 @@
             android:id="@+id/Name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/tttravels_bold"
             android:text="Гамид"
@@ -72,15 +83,5 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/LastName" />
 
-        <ImageView
-            android:id="@+id/imageView5"
-            android:layout_width="397dp"
-            android:layout_height="191dp"
-
-            android:layout_marginTop="-25dp"
-            android:layout_marginEnd="-100dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/item_vector" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
