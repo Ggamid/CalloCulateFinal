@@ -8,9 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dsafasd">#DB1B1B</color>
-    <color name="purple_button">#776DEB</color>
+    <color name="purple_button">#7FF560</color>
     <color name="yellow_icon">#E8F187</color>
-    <color name="purple_add">#695DEC</color>
+    <color name="purple_add">#7FF560</color>
     <color name="item_color">#C487F1</color>
 
 </resources>
