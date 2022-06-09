@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +12,20 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class RvAdapter  extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
+
+    interface OnStateClickListener{
+        void onStateClick(Child child, int position);
+    }
+
+    private final OnStateClickListener onClickListener;
+
+
+
     private List<Child> childList;
-    public RvAdapter(List<Child> childList) {
+    public RvAdapter(List<Child> childList, OnStateClickListener onClickListener) {
+        this.onClickListener = onClickListener;
         this.childList = childList;
+
     }
     @NonNull
     @Override
@@ -28,6 +40,12 @@ public class RvAdapter  extends RecyclerView.Adapter<RvAdapter.ViewHolder> {
         holder.lastName.setText(child.getLastName());
         holder.fatherName.setText(child.getFatherName());
         holder.birthDay.setText(child.getBirthDay());
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickListener.onStateClick(child, position);
+            }
+        });
     }
     @Override
     public int getItemCount() {

@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -44,7 +45,13 @@ public class MainActivity extends AppCompatActivity {
         childList = new ArrayList<>();
         mDataBase = FirebaseDatabase.getInstance().getReference("Child");
         rv = findViewById(R.id.rv1);
-        adapter = new RvAdapter(childList);
+        RvAdapter.OnStateClickListener stateClickListener = new RvAdapter.OnStateClickListener() {
+            @Override
+            public void onStateClick(Child child, int position) {
+                Toast.makeText(getApplicationContext(), "был выбран пункт " + child.getFirstName(), Toast.LENGTH_SHORT).show();
+            }
+        };
+        adapter = new RvAdapter(childList, stateClickListener);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplication(), LinearLayoutManager.VERTICAL, false);
         rv.setLayoutManager(linearLayoutManager);

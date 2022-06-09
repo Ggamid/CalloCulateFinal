@@ -29,8 +29,9 @@ public class RegActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.UserPassword);
     }
     public void clickReg(View view){
-
-        firebaseAuth.createUserWithEmailAndPassword(edEmail.getText().toString(), edPassword.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        String email = edEmail.getText().toString();
+        String password = edPassword.getText().toString();
+        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         startActivity(new Intent(RegActivity.this,MainActivity.class));
