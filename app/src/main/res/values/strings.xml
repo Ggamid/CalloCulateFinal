@@ -10,6 +10,7 @@
     <string name="birthday">ДД.ММ.ГГГГ</string>
     <string name="lastName">Фамилия</string>
     <string-array name="SmesiNames">
+        <item> </item>
         <item>Нутрилон 1 с рождения</item>
         <item>Нутрилон Пре 1 (с 1800 грамм)</item>
         <item>Нутрилон Пепти гастро</item>
