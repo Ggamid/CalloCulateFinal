@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".InfoReadActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddChildActivity"
             android:exported="true" />
         <activity

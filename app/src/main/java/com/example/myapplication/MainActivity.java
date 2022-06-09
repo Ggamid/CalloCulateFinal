@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -48,7 +49,14 @@ public class MainActivity extends AppCompatActivity {
         RvAdapter.OnStateClickListener stateClickListener = new RvAdapter.OnStateClickListener() {
             @Override
             public void onStateClick(Child child, int position) {
-                Toast.makeText(getApplicationContext(), "был выбран пункт " + child.getFirstName(), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, InfoReadActivity.class);
+                intent.putExtra("NameChild", child.getFirstName());
+                intent.putExtra("LastChild", child.getLastName());
+                intent.putExtra("FatherChild", child.getFatherName());
+                intent.putExtra("ageChild", child.getAge());
+                intent.putExtra("BirthChild", child.getBirthDay());
+                intent.putExtra("weightChild", child.getWeight());
+                startActivity(intent);
             }
         };
         adapter = new RvAdapter(childList, stateClickListener);
