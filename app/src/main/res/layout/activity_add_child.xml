@@ -64,8 +64,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="369dp"
-        android:layout_height="381dp"
+        android:layout_width="323dp"
+        android:layout_height="406dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -73,21 +73,9 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView">
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/childLastName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/custom_input"
-            android:ems="10"
-            android:hint="@string/Name"
-            android:inputType="textPersonName"
-            android:minHeight="48dp"
-            android:padding="10dp" />
-
-        <EditText
-            android:id="@+id/editTextTextPersonName5"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="@string/lastName"
@@ -96,7 +84,19 @@
             android:padding="10dp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/childName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/custom_input"
+            android:ems="10"
+            android:layout_marginTop="10dp"
+            android:hint="@string/Name"
+            android:inputType="textPersonName"
+            android:minHeight="48dp"
+            android:padding="10dp" />
+
+        <EditText
+            android:id="@+id/childFatherName"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
@@ -124,9 +124,9 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
             android:background="@drawable/custom_input"
             android:entries="@array/SmesiNames"
-            android:layout_marginBottom="10dp"
             android:padding="10dp" />
 
         <LinearLayout
@@ -143,19 +143,20 @@
                 android:background="@drawable/custom_input"
                 android:ems="10"
                 android:hint="Возраст"
-                android:inputType="textPersonName"
+                android:inputType="datetime"
                 android:minHeight="48dp"
                 android:padding="10dp" />
 
             <EditText
-                android:id="@+id/editTextTextPersonName7"
+                android:id="@+id/weight"
                 android:layout_width="369dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
                 android:ems="10"
                 android:hint="@string/weight"
-                android:inputType="textPersonName"
+
+                android:inputType="datetime"
                 android:minHeight="48dp"
                 android:padding="10dp" />
         </LinearLayout>
