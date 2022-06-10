@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("ageChild", child.getAge());
                 intent.putExtra("BirthChild", child.getBirthDay());
                 intent.putExtra("weightChild", child.getWeight());
+                intent.putExtra("id", child.getId());
                 startActivity(intent);
             }
         };

@@ -7,7 +7,7 @@
     <string name="add_child_button">добавить ребенка</string>
     <string name="Name">Имя</string>
     <string name="father_name">Отчество</string>
-    <string name="birthday">ДД.ММ.ГГГГ</string>
+    <string name="birthday">ДД/ММ/ГГГГ</string>
     <string name="lastName">Фамилия</string>
     <string-array name="SmesiNames">
         <item> </item>

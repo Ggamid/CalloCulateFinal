@@ -1,24 +1,16 @@
 package com.example.myapplication;
 
 public class Child {
-    public String  firstName, lastName, fatherName, birthDay, smes, age, weight;
+    public String  firstName, lastName, fatherName, birthDay, smes, age, weight, id;
 
-
-    public Child(String firstName, String lastName, String fatherName, String birthDay, String age, String weight, String smes) {
+    public Child(String firstName, String lastName, String fatherName, String birthDay, String age, String weight, String id) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fatherName = fatherName;
         this.birthDay = birthDay;
         this.age = age;
         this.weight = weight;
-        this.smes = smes;
-    }
-    public Child(String firstName, String lastName, String fatherName, String birthDay) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.fatherName = fatherName;
-        this.birthDay = birthDay;
-
+        this.id = id;
     }
 
     public Child(){}
@@ -45,6 +37,10 @@ public class Child {
 
     public String getAge() {
         return age;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getWeight() {

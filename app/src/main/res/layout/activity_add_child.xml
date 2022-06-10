@@ -64,8 +64,8 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="323dp"
-        android:layout_height="406dp"
+        android:layout_width="341dp"
+        android:layout_height="330dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -75,63 +75,55 @@
         <EditText
             android:id="@+id/childLastName"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="@string/lastName"
-            android:inputType="textPersonName"
+            android:inputType="textCapWords"
             android:minHeight="48dp"
             android:padding="10dp" />
 
         <EditText
             android:id="@+id/childName"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:layout_marginTop="10dp"
             android:hint="@string/Name"
-            android:inputType="textPersonName"
+            android:inputType="textCapWords"
             android:minHeight="48dp"
             android:padding="10dp" />
 
         <EditText
             android:id="@+id/childFatherName"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_input"
             android:ems="10"
             android:hint="@string/father_name"
-            android:inputType="textPersonName"
+            android:inputType="textCapWords"
             android:minHeight="48dp"
             android:padding="10dp" />
 
         <EditText
             android:id="@+id/RegActivityBirthDay"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="55dp"
             android:layout_marginTop="12dp"
             android:background="@drawable/custom_input"
             android:ems="10"
+            android:maxLength="10"
             android:hint="@string/birthday"
             android:inputType="datetime"
             android:minHeight="48dp"
             android:padding="10dp" />
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:background="@drawable/custom_input"
-            android:entries="@array/SmesiNames"
-            android:padding="10dp" />
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <EditText
@@ -142,8 +134,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
                 android:ems="10"
+                android:maxLength="2"
                 android:hint="Возраст"
-                android:inputType="datetime"
+                android:inputType="date"
                 android:minHeight="48dp"
                 android:padding="10dp" />
 
@@ -156,7 +149,7 @@
                 android:ems="10"
                 android:hint="@string/weight"
 
-                android:inputType="datetime"
+                android:inputType="date"
                 android:minHeight="48dp"
                 android:padding="10dp" />
         </LinearLayout>
