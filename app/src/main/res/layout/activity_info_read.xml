@@ -12,7 +12,6 @@
         android:layout_height="51dp"
         android:layout_marginTop="88dp"
         android:layout_marginEnd="16dp"
-        android:onClick="changeInfo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView12"
         app:srcCompat="@drawable/ic_baseline_delete_24" />
@@ -141,9 +140,10 @@
         android:layout_marginBottom="28dp"
         android:backgroundTint="@color/purple_button"
         android:fontFamily="@font/tttravels_bold"
-        android:text="подтвердить"
+        android:text="вычислить"
         android:textAllCaps="false"
         android:textSize="20dp"
+        android:onClick="calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

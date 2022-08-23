@@ -33,8 +33,8 @@
         <TextView
             android:id="@+id/LastName"
 
-            android:layout_width="wrap_content"
-            android:layout_height="29dp"
+            android:layout_width="94dp"
+            android:layout_height="25dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/tttravels_bold"
