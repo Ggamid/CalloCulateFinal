@@ -19,6 +19,9 @@
         <entry key="..\:/Users/Gamid/Coding/AStudio/CalloCulate-master/app/src/main/res/mipmap-anydpi-v26/ic_launchera.xml" value="0.3465" />
         <entry key="..\:/Users/Gamid/Coding/AStudio/CalloCulate-master/app/src/main/res/mipmap-anydpi-v26/ic_launchera2_round.xml" value="0.3465" />
         <entry key="..\:/Users/Gamid/Coding/AStudio/CalloCulate-master/app/src/main/res/mipmap-anydpi-v26/ic_launchera_round.xml" value="0.3465" />
+        <entry key="app/src/main/res/drawable/borderradius.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_add_child.xml" value="0.25666364586871604" />
+        <entry key="app/src/main/res/layout/activity_calc.xml" value="0.1977494612984036" />
       </map>
     </option>
   </component>
