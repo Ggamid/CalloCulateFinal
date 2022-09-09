@@ -57,6 +57,7 @@ public class InfoReadActivity extends AppCompatActivity {
         String setweight = data.get("weightChild").toString();
         String setBirthDay= data.get("BirthChild").toString();
         String id = data.get("id").toString();
+        String mixture = data.get("mixture").toString();
 
         Name.setText(name);
         LastName.setText(lastName);
@@ -74,6 +75,9 @@ public class InfoReadActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(InfoReadActivity.this,CalcActivity.class);
+                intent.putExtra("ageChild", setage);
+                intent.putExtra("weightChild", setweight);
+                intent.putExtra("mixture", mixture);
                 startActivity(intent);
             }
         });

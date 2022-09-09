@@ -31,6 +31,117 @@ public class CalcActivity extends AppCompatActivity {
 
         // common values
 
+        Bundle data = getIntent().getExtras();
+        double weight = Integer.parseInt(data.get("weightChild").toString());
+        double age = Integer.parseInt(data.get("ageChild").toString());
+
+        double indeed = 1;
+        double boluses = 1;
+
+        double vSingleFeeding = 1;
+        double countFeeding = 1;
+
+        byte enteral = 1;
+
+        double indeedNa = 1;
+
+        double indeedK = 1;
+
+        double indeedC = 1;
+
+        double indeedMg = 1;
+
+        double speedOfUtil = 1;
+
+        double doseOfFate= 1;
+        double fateEP= 1;
+        double concentrationOfFateEmulsion= 1;
+
+        double doseOfAminokislot = 1;
+        double proteinEP = 1;
+        double concentrationOfAmino = 1;
+
+        double generalLiquid = 1;
+        double vEnteral = 1;
+        double vElectolits = 1;
+        double vFlateEmuls = 1;
+        double vAmionkislot = 1;
+
+        double doseOfGlukoza = glukoza(speedOfUtil, weight);
+
+        double carbohydratesEnteral = 1;
+
+        double c1 = 1;
+        double v = 1;
+        double c2 = 1;
+
+        double generalVInfusion = 1;
+        double VInfusion = 1;
+
+        double enteralCal = 1;
+        double uglevodi = 1;
+        double protein = 1;
+        double flat = 1;
+
+        // 1
+
+        calcLiquid(indeed, weight, boluses);
+
+        // 2
+
+        calcEnteral(vSingleFeeding, countFeeding);
+
+        // 3
+
+        calcPFCC(similac_neo_shur, enteral);
+
+        // 4
+
+        sodium(weight, indeedNa);
+
+        // 5
+
+        potassium(weight, indeedK);
+
+        // 6
+
+        calcium(weight, indeedC);
+
+        //7
+
+        magnesium(weight, indeedMg);
+
+        // 8
+
+        glukoza(speedOfUtil, weight);
+
+        //9
+
+        fateEmuls(weight, doseOfFate, fateEP, concentrationOfFateEmulsion);
+
+        // 10
+
+        calcAmionkislot(weight, doseOfAminokislot, proteinEP, concentrationOfAmino);
+
+        // 11
+
+        volumePerGlucose(generalLiquid, vEnteral, vElectolits, vFlateEmuls, vAmionkislot);
+
+        // 12
+
+        vnutrVeniGlukoza(doseOfGlukoza, carbohydratesEnteral);
+
+        //13
+
+        definitionOfVGlukoza(doseOfGlukoza, c1, v, c2);
+
+        // 14
+
+        infusionSpeed(generalVInfusion, doseOfGlukoza, VInfusion);
+
+        // 15
+
+        calcOfCalories(enteralCal, uglevodi, protein, flat, weight);
 
 
 
