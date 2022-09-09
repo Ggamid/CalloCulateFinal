@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import static com.example.myapplication.Сalculations.*;
 
 public class CalcActivity extends AppCompatActivity {
 
@@ -14,7 +15,14 @@ public class CalcActivity extends AppCompatActivity {
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+
+
+
+
     }
+
 
 
 

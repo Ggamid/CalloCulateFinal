@@ -64,7 +64,7 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="341dp"
+        android:layout_width="344dp"
         android:layout_height="330dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/imageView2"
@@ -114,9 +114,9 @@
             android:layout_marginTop="12dp"
             android:background="@drawable/custom_input"
             android:ems="10"
-            android:maxLength="10"
             android:hint="@string/birthday"
             android:inputType="datetime"
+            android:maxLength="10"
             android:minHeight="48dp"
             android:padding="10dp" />
 
@@ -134,9 +134,9 @@
                 android:layout_weight="1"
                 android:background="@drawable/custom_input"
                 android:ems="10"
-                android:maxLength="2"
                 android:hint="Возраст"
                 android:inputType="date"
+                android:maxLength="2"
                 android:minHeight="48dp"
                 android:padding="10dp" />
 
