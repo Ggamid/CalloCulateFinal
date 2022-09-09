@@ -37,6 +37,7 @@ public class AddChildActivity extends AppCompatActivity {
         birthDay = findViewById(R.id.RegActivityBirthDay);
         age = findViewById(R.id.Age);
         weight = findViewById(R.id.weight);
+        smes = findViewById(R.id.spinner);
         firebaseDatabase  = FirebaseDatabase.getInstance().getReference("Child");
 
 
@@ -53,10 +54,10 @@ public class AddChildActivity extends AppCompatActivity {
     }
 
     public void setBD(View view){
-        if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !fatherName.getText().toString().equals("") && !age.getText().toString().equals("")  && !weight.getText().toString().equals("") && !birthDay.getText().toString().equals("")) {
+        if(!firstName.getText().toString().equals("") && !lastName.getText().toString().equals("") && !fatherName.getText().toString().equals("") && !age.getText().toString().equals("")  && !weight.getText().toString().equals("") && !birthDay.getText().toString().equals("") && !smes.getSelectedItem().toString().equals(" ")) {
             Random random = new Random();
             Child child = new Child(firstName.getText().toString(), lastName.getText().toString(), fatherName.getText().toString(), birthDay.getText().toString(), age.getText().toString(),
-                    weight.getText().toString(), generateString(random,"123456789АБВГДеЕЖжЗз", 20));
+                    weight.getText().toString(), generateString(random,"123456789АБВГДеЕЖжЗз", 20), smes.getSelectedItem().toString());
             firebaseDatabase.push().setValue(child);
             startActivity(new Intent(AddChildActivity.this, MainActivity.class));
         }

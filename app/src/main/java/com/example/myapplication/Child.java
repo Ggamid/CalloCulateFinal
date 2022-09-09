@@ -3,7 +3,7 @@ package com.example.myapplication;
 public class Child {
     public String  firstName, lastName, fatherName, birthDay, smes, age, weight, id;
 
-    public Child(String firstName, String lastName, String fatherName, String birthDay, String age, String weight, String id) {
+    public Child(String firstName, String lastName, String fatherName, String birthDay, String age, String weight, String id, String smes) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.fatherName = fatherName;
@@ -11,6 +11,7 @@ public class Child {
         this.age = age;
         this.weight = weight;
         this.id = id;
+        this.smes = smes;
     }
 
     public Child(){}
