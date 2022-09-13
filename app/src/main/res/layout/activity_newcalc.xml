@@ -1,0 +1,1661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal|center_vertical">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="409dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:background="@color/bg_color"
+        app:layout_constraintBottom_toTopOf="@+id/guideline2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/black"
+            android:orientation="vertical"
+
+            >
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@drawable/borderradius"
+
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет общего количества жидкости"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textView6"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/indeed"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="52dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="физиологическая потребность(мл/кг)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <EditText
+                    android:id="@+id/boluses"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="болюсы(мл) СПЖ"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indeed" />
+
+
+                <EditText
+                    android:id="@+id/weight"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="вес"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/boluses" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Физ. потребность(мл/кг) * массу тела(гр.) - болюсы(мл) СПЖ"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+                <Button
+                    android:id="@+id/button5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weight" />
+
+                <TextView
+                    android:id="@+id/calcLiquid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/calcEnteralFeeding"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="2 Расчет энтерального питания"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textcalcEnteral"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="2.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textcalcEnteral2"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Объем питания фактический"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textcalcEnteral"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textcalcEnteral3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Vразового кормления(мл) * число кормлений"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textcalcEnteral2" />
+
+
+                <EditText
+                    android:id="@+id/vSingleFeeding"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="Vразового кормления фактический (мл)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textcalcEnteral3" />
+
+
+                <EditText
+                    android:id="@+id/countFeeding"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="число кормлений"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vSingleFeeding" />
+
+
+                <Button
+                    android:id="@+id/calcEnteral_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/countFeeding" />
+
+                <TextView
+                    android:id="@+id/calcEnteral_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calcEnteral_btn" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textcalcPFCC"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="2.2"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textcalcPFCC2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет белков жиров и каллорий энтерально"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textcalcPFCC"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textcalcPFCC3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="Vразового кормления(мл) * число кормлений"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textcalcPFCC2" />
+
+                <Spinner
+                    android:id="@+id/spinner"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginTop="8dp"
+
+                    android:layout_marginEnd="28dp"
+
+                    android:background="@drawable/for_calc_activity"
+                    android:entries="@array/SmesiNames"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textcalcPFCC3" />
+
+                <EditText
+                    android:id="@+id/smes"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="Vразового кормления фактический (мл)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+
+                <EditText
+                    android:id="@+id/enteral"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="число кормлений"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/smes" />
+
+
+                <Button
+                    android:id="@+id/calcPFCC_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/enteral" />
+
+                <TextView
+                    android:id="@+id/calcPFCC_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calcPFCC_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/calcInneedElectro"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="3 Расчет необходимого объема электролитов"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/text4Sodium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="3.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text4Sodium2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет дозы натрия"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/text4Sodium"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text4Sodium3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="вес * потребность в Na (ммоль/л) * 0,66"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text4Sodium2" />
+
+
+                <EditText
+                    android:id="@+id/indeedK"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="вес"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/text4Sodium3" />
+
+
+                <EditText
+                    android:id="@+id/weightSodium"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="потребность в Na (ммоль/л)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indeedK" />
+
+
+                <Button
+                    android:id="@+id/Sodium_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightSodium" />
+
+                <TextView
+                    android:id="@+id/Sodium_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Sodium_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textPottasium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="3.2"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textPottasium2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет дозы калия"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textPottasium"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textPottasium3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="вес * потребность в K (ммоль) * 1,85"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textPottasium2" />
+
+
+                <EditText
+                    android:id="@+id/indeedNa"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="вес"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textPottasium3" />
+
+
+                <EditText
+                    android:id="@+id/weightPottasium"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="потребность в K (ммоль)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indeedNa" />
+
+
+                <Button
+                    android:id="@+id/Pottasium_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightPottasium" />
+
+                <TextView
+                    android:id="@+id/Pottasium_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="100dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Pottasium_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textCalcium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="3.3"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textCalcium2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет дозы кальция"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textCalcium"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textCalcium3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="потребность кальция (м моль) * m тела * 4,4 коэффициент 1,1 для 10% глюконата Ca - 4,4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textCalcium2" />
+
+
+                <EditText
+                    android:id="@+id/indeedC"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="вес"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textCalcium3" />
+
+
+                <EditText
+                    android:id="@+id/weightCalcium"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="потребность в Ca (м моль)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indeedC" />
+
+
+                <Button
+                    android:id="@+id/Calcium_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightCalcium" />
+
+                <TextView
+                    android:id="@+id/Calcium_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="100dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Calcium_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textMagnesium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="3.4"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textMagnesium2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет дозы магния"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textMagnesium"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textMagnesium3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="потребность Mg (м моль) * m тела"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textMagnesium2" />
+
+
+                <EditText
+                    android:id="@+id/indeedMg"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="масса тела"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textMagnesium3" />
+
+
+                <EditText
+                    android:id="@+id/weightMagnesium"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="потребность в Mg (м моль)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/indeedMg" />
+
+
+                <Button
+                    android:id="@+id/Magnesium_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightMagnesium" />
+
+                <TextView
+                    android:id="@+id/Magnesium_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="100dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Magnesium_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/calcGludozeDose"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="4 Расчет дозы глюкозы, исходя из скорости утилизации"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textGlukoza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="4.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textGlukoza2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет дозы глюкозы, исходя из скорости утилизации"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textGlukoza"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textGlukoza3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="скорость утилизации глюкозы * m * 1,44"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textGlukoza2" />
+
+
+                <EditText
+                    android:id="@+id/speedOfUtil"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="скорость утилизации глюкозы (мг/кг/мин)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textGlukoza3" />
+
+
+                <EditText
+                    android:id="@+id/weightGlukoza"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="масса тела"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/speedOfUtil" />
+
+
+                <Button
+                    android:id="@+id/Glukoza_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightGlukoza" />
+
+                <TextView
+                    android:id="@+id/Glukoza_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Glukoza_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/calcVFateEmuls"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="5 Расчет объема жировой эмульсии"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="570dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textVFateEmuls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="5.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textVFateEmuls2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет объема жировой эмульсии"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textVFateEmuls"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textVFateEmuls3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="[масса тела * доза жиров - жиры ЭП *100]/концентрация жировой эмульсии(%)"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textVFateEmuls2" />
+
+
+                <EditText
+                    android:id="@+id/weightVFateEmuls"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="масса тела"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textVFateEmuls3" />
+
+
+                <EditText
+                    android:id="@+id/doseOfFlate"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="доза жиров"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightVFateEmuls" />
+
+                <EditText
+                    android:id="@+id/fateEP"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="жиры ЭП"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/doseOfFlate" />
+
+                <EditText
+                    android:id="@+id/concentrationOfFateEmulsion"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="концентрация жировой эмульсии"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/fateEP" />
+
+
+                <Button
+                    android:id="@+id/VFateEmuls_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/concentrationOfFateEmulsion" />
+
+                <TextView
+                    android:id="@+id/VFateEmuls_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/VFateEmuls_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/calcAmionkislot"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="6 Расчет необходимой дозы аминокислот"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="570dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textAmionkislot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="6.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textAmionkislot2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет расчет необходимой дозы аминокислот"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textAmionkislot"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textAmionkislot3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="[масса тела * доза аминокислот - белки ЭП *100]/концентрация аминокислот(%)"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textAmionkislot2" />
+
+
+                <EditText
+                    android:id="@+id/weightAmionkislot"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="масса тела"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textAmionkislot3" />
+
+
+                <EditText
+                    android:id="@+id/doseOfAminokislot"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="доза аминокислот"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightAmionkislot" />
+
+                <EditText
+                    android:id="@+id/proteinEP"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="белки ЭП"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/doseOfAminokislot" />
+
+                <EditText
+                    android:id="@+id/concentrationOfAmino"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="концентрация аминокислот (%)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/proteinEP" />
+
+
+                <Button
+                    android:id="@+id/calcAmionkislot_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/concentrationOfAmino" />
+
+                <TextView
+                    android:id="@+id/calcAmionkislot_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calcAmionkislot_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/volumePerGlucose"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="7 определение объема приходящегося на глюкозу"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="640dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textvolumePerGlucose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="7.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textvolumePerGlucose2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Объем Глюкозы"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textvolumePerGlucose"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textvolumePerGlucose3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="общее количество жидкости - V энтерально - V эелектролитов - V жировой эмульсии - V аминокислот"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textvolumePerGlucose2" />
+
+
+                <EditText
+                    android:id="@+id/generalLiquid"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="общее количество жидкости"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textvolumePerGlucose3" />
+
+
+                <EditText
+                    android:id="@+id/vEnteral"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="V энтерально"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/generalLiquid" />
+
+                <EditText
+                    android:id="@+id/vElectolits"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="V эелектролитов"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vEnteral" />
+
+                <EditText
+                    android:id="@+id/vFlateEmuls"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="V жировой эмульсии"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vElectolits" />
+
+                <EditText
+                    android:id="@+id/vAmionkislot"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="V аминокислот"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vFlateEmuls" />
+
+
+                <Button
+                    android:id="@+id/volumePerGlucose_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/vAmionkislot" />
+
+                <TextView
+                    android:id="@+id/volumePerGlucose_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/volumePerGlucose_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textVnutrVeniGlukoza"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="7.2"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textVnutrVeniGlukoza2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Определение дозы внутревенное глюкозы"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textVnutrVeniGlukoza"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textVnutrVeniGlukoza3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="доза глюкозы (г/сут) - углеводов энтерально (г)"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textVnutrVeniGlukoza2" />
+
+
+                <EditText
+                    android:id="@+id/doseOfGlukoza"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="доза глюкозы"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textVnutrVeniGlukoza3" />
+
+
+                <EditText
+                    android:id="@+id/carbohydratesEnteral"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="углеводов энтерально"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/doseOfGlukoza" />
+
+
+                <Button
+                    android:id="@+id/VnutrVeniGlukoza_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/carbohydratesEnteral" />
+
+                <TextView
+                    android:id="@+id/VnutrVeniGlukoza_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/VnutrVeniGlukoza_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="659dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintGuide_begin="22dp"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+</androidx.constraintlayout.widget.ConstraintLayout>

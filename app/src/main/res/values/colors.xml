@@ -12,5 +12,8 @@
     <color name="yellow_icon">#E8F187</color>
     <color name="purple_add">#7FF560</color>
     <color name="item_color">#C487F1</color>
+    <color name="bg_color">#CEEDEA</color>
+    <color name="btn_cian">#B0EFE9</color>
+    <color name="calc_gray">#D9D9D9</color>
 
 </resources>
