@@ -64,12 +64,14 @@ public class Сalculations {
         double[] data = new double[] {mlPerHour, concentrationOfGlukozaInInfusionMixture};
         return data;
     }
-    public static double calcOfCalories(double enteralCal, double uglevodi, double protein, double flat, double weight){
+    public static double[] calcOfCalories(double enteralCal, double uglevodi, double protein, double flat, double weight){
         double enteral = enteralCal * uglevodi * 3.4;
         double protein1 = protein*4;
         double flat1 = flat*9;
         double generalCal = (enteral + protein1 + flat1) / weight;
-        return generalCal;
+        double[] data = new double[] {enteral, protein1, flat1, generalCal};
+
+        return data;
     }
 
 

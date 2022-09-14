@@ -110,7 +110,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="вес"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:visibility="visible"
@@ -477,7 +477,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="5dp"
-                    android:text="вес * потребность в Na (ммоль/л) * 0,66"
+                    android:text="масса тела * потребность в Na (ммоль/л) * 0,66"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -493,7 +493,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="вес"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14sp"
@@ -589,7 +589,7 @@
                     android:layout_marginStart="16dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginEnd="5dp"
-                    android:text="вес * потребность в K (ммоль) * 1,85"
+                    android:text="масса тела * потребность в K (ммоль) * 1,85"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
@@ -605,7 +605,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="вес"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14sp"
@@ -717,7 +717,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="вес"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14sp"
@@ -1816,6 +1816,468 @@
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textVolume10Glukoze"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="8.2"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textVolume10Glukoze2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="V1 (объем 10% глюкозы)"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textVolume10Glukoze"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textVolume10Glukoze3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="V - V2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textVolume10Glukoze2" />
+
+
+                <EditText
+                    android:id="@+id/V"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="V"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textVolume10Glukoze3" />
+
+
+                <EditText
+                    android:id="@+id/V2_40_percentOfGlukoze"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="V2 (объем 40% глюкозы)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/V" />
+
+
+
+                <Button
+                    android:id="@+id/Volume10Glukoze_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/V2_40_percentOfGlukoze" />
+
+                <TextView
+                    android:id="@+id/Volume10Glukoze_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/Volume10Glukoze_btn" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/infusionSpeed"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="9 Инфузионная программа"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="570dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textInfusionSpeed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="9.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textInfusionSpeed2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="инфузионная программа"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textInfusionSpeed"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textInfusionSpeed3"
+                    android:layout_width="354dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text="скорость инфузии: общий объем инфузии / 24        концентрация глюкозы в инфуз. раствроре:(C1%): Доза в/в глюкозы(гр) * 100/ Vинфузии(мл)"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInfusionSpeed2" />
+
+
+
+
+                <EditText
+                    android:id="@+id/generalVInfusion"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="общший объем инфузии"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textInfusionSpeed3" />
+
+                <EditText
+                    android:id="@+id/doseOfGlukoza3"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="Доза в/в глюкозы(гр)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/generalVInfusion" />
+
+                <EditText
+                    android:id="@+id/VInfusion"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="Vинфузии(мл)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/doseOfGlukoza3" />
+
+
+
+
+                <Button
+                    android:id="@+id/InfusionSpeed_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/VInfusion" />
+
+                <TextView
+                    android:id="@+id/InfusionSpeed_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="textView"
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/InfusionSpeed_btn" />
+
+                <TextView
+                    android:id="@+id/InfusionSpeed_result2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="textView"
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/InfusionSpeed_result" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="70dp">
+
+
+                <TextView
+                    android:id="@+id/calcOfCalories"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="44dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
+                    android:text="10 расчет суточного калоража"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="640dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/textСalcOfCalories"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="10.1"
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textСalcOfCalories2"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Расчет суточного калоража"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/textСalcOfCalories"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textСalcOfCalories3"
+                    android:layout_width="346dp"
+                    android:layout_height="38dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="5dp"
+                    android:text=""
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textСalcOfCalories2" />
+
+
+                <EditText
+                    android:id="@+id/enteralCal"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="энетеральных"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textСalcOfCalories3" />
+
+
+                <EditText
+                    android:id="@+id/uglevodi"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="углеводы"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/enteralCal" />
+
+                <EditText
+                    android:id="@+id/protein"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="белки"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uglevodi" />
+
+                <EditText
+                    android:id="@+id/flat"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="масса тела"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/protein" />
+
+                <EditText
+                    android:id="@+id/weightCalcOfCalories"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="жиры"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/flat" />
+
+
+                <Button
+                    android:id="@+id/calcOfCalories_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Вычислить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/weightCalcOfCalories" />
+
+                <TextView
+                    android:id="@+id/calcOfCalories_result"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:layout_marginEnd="112dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textSize="34sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/calcOfCalories_btn" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>

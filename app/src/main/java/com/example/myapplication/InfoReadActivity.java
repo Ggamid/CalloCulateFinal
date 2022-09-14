@@ -36,8 +36,7 @@ public class InfoReadActivity extends AppCompatActivity {
         ImageView button;
         Button calc;
 
-        Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         calc = findViewById(R.id.button4);
         Name = findViewById(R.id.FirstNameInfoActivity);
