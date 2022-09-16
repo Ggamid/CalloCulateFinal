@@ -10,7 +10,7 @@ public class Сalculations {
         return vSingleFeeding * countFeeding;
     }
 
-    public static double[] calcPFCC(Mixtures mixture, byte enteral){
+    public static double[] calcPFCC(Mixtures mixture, double enteral){
         double proteinEnteral = enteral * mixture.getCarbohydrates() / 100;
         double fateEnteral = enteral * mixture.getFats() / 100;
         double carbohydratesEnteral = enteral * mixture.getCarbohydrates() / 100;

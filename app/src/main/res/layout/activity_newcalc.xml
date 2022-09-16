@@ -351,39 +351,6 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textcalcPFCC3" />
 
-                <EditText
-                    android:id="@+id/smes"
-                    android:layout_width="344dp"
-                    android:layout_height="51dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="28dp"
-                    android:background="@drawable/for_calc_activity"
-                    android:ems="10"
-                    android:fontFamily="@font/tttravels_bold"
-                    android:hint="Vразового кормления фактический (мл)"
-                    android:inputType="date"
-                    android:paddingLeft="10dp"
-                    android:textSize="14sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/spinner" />
-
-
-                <EditText
-                    android:id="@+id/enteral"
-                    android:layout_width="344dp"
-                    android:layout_height="51dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginTop="28dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/for_calc_activity"
-                    android:ems="10"
-                    android:fontFamily="@font/tttravels_bold"
-                    android:hint="число кормлений"
-                    android:inputType="date"
-                    android:paddingLeft="10dp"
-                    android:textSize="14dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/smes" />
 
 
                 <Button
@@ -396,7 +363,7 @@
                     android:fontFamily="@font/tttravels_bold"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/enteral" />
+                    app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
                 <TextView
                     android:id="@+id/calcPFCC_result"
@@ -409,6 +376,7 @@
                     android:textSize="34sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/calcPFCC_btn" />
+
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
