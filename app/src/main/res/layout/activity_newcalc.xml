@@ -273,8 +273,8 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
-                    android:text="Вычислить"
                     android:onClick="calcEnteral_btn"
+                    android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/countFeeding" />
 
@@ -373,7 +373,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/spinner" />
 
 
-
                 <Button
                     android:id="@+id/calcPFCC_btn"
                     android:layout_width="wrap_content"
@@ -382,8 +381,8 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
-                    android:text="Вычислить"
                     android:onClick="calcPFCC_btn"
+                    android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/voulumeFeedingInFacts" />
 
@@ -398,7 +397,6 @@
                     android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/calcPFCC_btn" />
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -517,8 +515,8 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
-                    android:text="Вычислить"
                     android:onClick="sodiumCalc"
+                    android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weightSodium" />
 
@@ -630,6 +628,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcPottasium"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/indeedK" />
@@ -742,6 +741,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcCalcium"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weightCalcium" />
@@ -854,6 +854,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcMagnesium"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weightMagnesium" />
@@ -987,6 +988,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcGlukoza"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weightGlukoza" />
@@ -1154,6 +1156,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcFateEmuls"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/concentrationOfFateEmulsion" />
@@ -1322,6 +1325,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcAminokislot"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/concentrationOfAmino" />
@@ -1506,6 +1510,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcVolumePerGLucose"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/vAmionkislot" />
@@ -1618,6 +1623,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcVnutrVeni"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/carbohydratesEnteral" />
@@ -1718,7 +1724,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="с2"
+                    android:hint="доза глюкозы"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14sp"
@@ -1736,7 +1742,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="доза"
+                    android:hint="с1"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
@@ -1753,7 +1759,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="с1"
+                    android:hint="v"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
@@ -1770,14 +1776,12 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="V"
+                    android:hint="c2"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/v" />
-
-
 
 
                 <Button
@@ -1788,6 +1792,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcDefinitionOfGlukoza"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/c2" />
@@ -1893,7 +1898,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/V" />
 
 
-
                 <Button
                     android:id="@+id/Volume10Glukoze_btn"
                     android:layout_width="wrap_content"
@@ -1902,6 +1906,7 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcVolume10Glukoze"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/V2_40_percentOfGlukoze" />
@@ -1991,8 +1996,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/textInfusionSpeed2" />
 
 
-
-
                 <EditText
                     android:id="@+id/generalVInfusion"
                     android:layout_width="344dp"
@@ -2045,8 +2048,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/doseOfGlukoza3" />
 
 
-
-
                 <Button
                     android:id="@+id/InfusionSpeed_btn"
                     android:layout_width="wrap_content"
@@ -2056,6 +2057,7 @@
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
                     android:text="Вычислить"
+                    android:onClick="calcInfusionSpeed"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/VInfusion" />
 
@@ -2109,7 +2111,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="640dp"
+                android:layout_height="740dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/borderradius"
                 android:backgroundTint="@color/white"
@@ -2218,7 +2220,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="масса тела"
+                    android:hint="жиры"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
@@ -2235,7 +2237,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="жиры"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
@@ -2252,6 +2254,7 @@
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
                     android:text="Вычислить"
+                    android:onClick="calcOfCalories_btnLast"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weightCalcOfCalories" />
 
@@ -2263,7 +2266,7 @@
                     android:layout_marginEnd="112dp"
                     android:fontFamily="@font/tttravels_bold"
                     android:text=""
-                    android:textSize="34sp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/calcOfCalories_btn" />
 

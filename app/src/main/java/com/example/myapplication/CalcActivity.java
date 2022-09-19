@@ -35,7 +35,7 @@ public class CalcActivity extends AppCompatActivity {
             Pottasium_result, Calcium_result, Magnesium_result, Glukoza_result, VFateEmuls_result,
             calcAmionkislot_result, volumePerGlucose_result, VnutrVeniGlukoza_result,
             definitionOfVGlukoza_result, Volume10Glukoze_result, InfusionSpeed_result,
-            InfusionSpeed_result2;
+            InfusionSpeed_result2, calcOfCalories_result;
 
     Mixtures nutrilon_from_birth = new Mixtures(1.3,3.4, 7.3, 66);
     Mixtures nutrilon_pre1_1800gramm = new Mixtures(2.0, 3.9,7.4,74);
@@ -160,12 +160,17 @@ public class CalcActivity extends AppCompatActivity {
         doseOfGlukoza_view = findViewById(R.id.doseOfGlukoza);
         double doseOfGlukoza = glukoza(speedOfUtil, weight);
 
+        doseOfGlukoza2_view = findViewById(R.id.doseOfGlukoza2);
+        doseOfGlukoza3_view = findViewById(R.id.doseOfGlukoza3);
+
         carbohydratesEnteral_view = findViewById(R.id.carbohydratesEnteral);
         double carbohydratesEnteral = 1;
 
         c1_view = findViewById(R.id.c1);
         c2_view = findViewById(R.id.c2);
         v_view = findViewById(R.id.v);
+        V_view = findViewById(R.id.V);
+        V2_40_percentOfGlukoze_view = findViewById(R.id.V2_40_percentOfGlukoze);
         double c1 = 1;
         double v = 1;
         double c2 = 1;
@@ -196,47 +201,47 @@ public class CalcActivity extends AppCompatActivity {
 
         // 5
 
-        potassium(weight, indeedK);
+//        potassium(weight, indeedK);
 
         // 6
 
-        calcium(weight, indeedC);
+//        calcium(weight, indeedC);
 
         //7
 
-        magnesium(weight, indeedMg);
+//        magnesium(weight, indeedMg);
 
         // 8
 
-        glukoza(speedOfUtil, weight);
+//        glukoza(speedOfUtil, weight);
 
         //9
 
-        fateEmuls(weight, doseOfFate, fateEP, concentrationOfFateEmulsion);
+//        fateEmuls(weight, doseOfFate, fateEP, concentrationOfFateEmulsion);
 
         // 10
 
-        calcAmionkislot(weight, doseOfAminokislot, proteinEP, concentrationOfAmino);
+//        calcAmionkislot(weight, doseOfAminokislot, proteinEP, concentrationOfAmino);
 
         // 11
 
-        volumePerGlucose(generalLiquid, vEnteral, vElectolits, vFlateEmuls, vAmionkislot);
+//        volumePerGlucose(generalLiquid, vEnteral, vElectolits, vFlateEmuls, vAmionkislot);
 
         // 12
 
-        vnutrVeniGlukoza(doseOfGlukoza, carbohydratesEnteral);
+//        vnutrVeniGlukoza(doseOfGlukoza, carbohydratesEnteral);
 
         //13
 
-        definitionOfVGlukoza(doseOfGlukoza, c1, v, c2);
+//        definitionOfVGlukoza(doseOfGlukoza, c1, v, c2);
 
         // 14
 
-        infusionSpeed(generalVInfusion, doseOfGlukoza, VInfusion);
+//        infusionSpeed(generalVInfusion, doseOfGlukoza, VInfusion);
 
         // 15
 
-        calcOfCalories(enteralCal, uglevodi, protein, flat, weight);
+//        calcOfCalories(enteralCal, uglevodi, protein, flat, weight);
 
 
     }
@@ -258,6 +263,7 @@ public class CalcActivity extends AppCompatActivity {
         Volume10Glukoze_result = findViewById(R.id.Volume10Glukoze_result);
         InfusionSpeed_result = findViewById(R.id.InfusionSpeed_result);
         InfusionSpeed_result2 = findViewById(R.id.InfusionSpeed_result2);
+        calcOfCalories_result = findViewById(R.id.calcOfCalories_result);
     }
 
     //1
@@ -266,10 +272,12 @@ public class CalcActivity extends AppCompatActivity {
 
         if (!indeed_view.getText().toString().equals("") && !boluses_view.getText().toString().equals("")
                 && !weight_view.getText().toString().equals("")){
+
         double indeed = Double.parseDouble(indeed_view.getText().toString());
         double boluses = Double.parseDouble(boluses_view.getText().toString());
         double weight = Double.parseDouble(weight_view.getText().toString());
         double result_double = calcLiquid(indeed, weight, boluses);
+
         String result = Double.toString(result_double);
         calcLiquid_result.setText(result);
 
@@ -281,14 +289,15 @@ public class CalcActivity extends AppCompatActivity {
 
     //2.1
     public void calcEnteral_btn(View view){
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
 
         if (!vSingleFeeding_view.getText().toString().equals("") && !countFeeding_view.getText().toString().equals("")){
 
             double vSingleFeeding = Double.parseDouble(vSingleFeeding_view.getText().toString());
             double countFeeding = Double.parseDouble(countFeeding_view.getText().toString());
 
-            double result_double = calcEnteral(vSingleFeeding, countFeeding);;
-            String result = Double.toString(result_double);
+            String result = decimalFormat.format(calcEnteral(vSingleFeeding, countFeeding));
 
             calcEnteral_result.setText(result);
 
@@ -345,26 +354,338 @@ public class CalcActivity extends AppCompatActivity {
 
     public void sodiumCalc(View view){
 
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
         if (!indeedNa_view.getText().toString().equals("") && !weightSodium_view.getText().toString().equals("")){
 
 
             double indeedNa = Double.parseDouble(indeedNa_view.getText().toString());
             double weightSodium = Double.parseDouble(weightSodium_view.getText().toString());
 
-            double result_double = sodium(weightSodium, indeedNa);
-            String result = Double.toString(result_double);
+            String result = decimalFormat.format(sodium(weightSodium, indeedNa));
 
             Sodium_result.setText(result);
 
         }
         else {
-            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 2.1", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 3.1", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void calcPottasium(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!indeedK_view.getText().toString().equals("") && !weightPottasium_view.getText().toString().equals("")){
+
+
+            double indeedK = Double.parseDouble(indeedK_view.getText().toString());
+            double weightPottasium = Double.parseDouble(weightPottasium_view.getText().toString());
+
+            String result = decimalFormat.format(potassium(indeedK, weightPottasium));
+
+            Pottasium_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 3.2", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void calcCalcium(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!indeedC_view.getText().toString().equals("") && !weightCalcium_view.getText().toString().equals("")){
+
+
+            double indeedC = Double.parseDouble(indeedC_view.getText().toString());
+            double weightCalcium = Double.parseDouble(weightCalcium_view.getText().toString());
+
+            String result = decimalFormat.format(calcium(indeedC, weightCalcium));
+
+            Calcium_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 3.3", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void calcMagnesium(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!indeedMg_view.getText().toString().equals("") && !weigthMagnesium_view.getText().toString().equals("")){
+
+
+            double indeedMg = Double.parseDouble(indeedMg_view.getText().toString());
+            double weightMagnesium = Double.parseDouble(weigthMagnesium_view.getText().toString());
+
+            String result = decimalFormat.format(magnesium(indeedMg, weightMagnesium));
+
+            Magnesium_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 3.4", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void calcGlukoza(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!speedOfUtil_view.getText().toString().equals("") && !weightGlukoza_view.getText().toString().equals("")){
+
+
+            double speedOfUtil = Double.parseDouble(speedOfUtil_view.getText().toString());
+            double weightGlukoza = Double.parseDouble(weightGlukoza_view.getText().toString());
+
+            String result = decimalFormat.format(glukoza(speedOfUtil, weightGlukoza));
+
+            Glukoza_result.setText(result);
+            doseOfGlukoza_view.setText(result);
+            doseOfGlukoza2_view.setText(result);
+            doseOfGlukoza3_view.setText(result);
+
+
+
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 4.1", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+//    5.1
+
+    public void calcFateEmuls(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!weightVFateEmuls_view.getText().toString().equals("") && !doseOfFlate_view.getText().toString().equals("")
+                && !fateEP_view.getText().toString().equals("") && !concentrationOfFateEmulsion_view.getText().toString().equals("")){
+
+
+            double weightVFateEmuls = Double.parseDouble(weightVFateEmuls_view.getText().toString());
+            double doseOfFate= Double.parseDouble(doseOfFlate_view.getText().toString());
+            double fateEP = Double.parseDouble(fateEP_view.getText().toString());
+            double concentrationOfFateEmulsion = Double.parseDouble(concentrationOfFateEmulsion_view.getText().toString());
+
+            String result = decimalFormat.format(fateEmuls(weightVFateEmuls,doseOfFate,fateEP,concentrationOfFateEmulsion));
+
+            VFateEmuls_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 5.1", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+// 6.1
+
+    //        calcAmionkislot(weight, doseOfAminokislot, proteinEP, concentrationOfAmino);
+
+    public void calcAminokislot(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!weightAminokislot_view.getText().toString().equals("") && !doseOfAminokislot_view.getText().toString().equals("")
+                && !protein_view.getText().toString().equals("") && !concentrationOfAmino_view.getText().toString().equals("")){
+
+
+            double weightAminokislot = Double.parseDouble(weightAminokislot_view.getText().toString());
+            double doseOfAminokislot= Double.parseDouble(doseOfAminokislot_view.getText().toString());
+            double protein = Double.parseDouble(protein_view.getText().toString());
+            double concentrationOfAmino = Double.parseDouble(concentrationOfAmino_view.getText().toString());
+
+            String result = decimalFormat.format(fateEmuls(weightAminokislot,doseOfAminokislot,protein,concentrationOfAmino));
+
+            calcAmionkislot_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 6.1", Toast.LENGTH_SHORT).show();
+        }
+    }
+    //7.1
+    //        volumePerGlucose(generalLiquid, vEnteral, vElectolits, vFlateEmuls, vAmionkislot);
+
+    public void calcVolumePerGLucose(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!generalLiquid_view.getText().toString().equals("") && !vEnteral_view.getText().toString().equals("")
+                && !vElectrolits_view.getText().toString().equals("") && !vFlateEmuls_view.getText().toString().equals("")
+                && !vAminokislot_view.getText().toString().equals("")){
+
+
+            double generalLiquid = Double.parseDouble(generalLiquid_view.getText().toString());
+            double vEnteral= Double.parseDouble(vEnteral_view.getText().toString());
+            double vElectrolits = Double.parseDouble(vElectrolits_view.getText().toString());
+            double vFlateEmuls = Double.parseDouble(vFlateEmuls_view.getText().toString());
+            double vAminokislot = Double.parseDouble(vAminokislot_view.getText().toString());
+
+            String result = decimalFormat.format(volumePerGlucose(generalLiquid,vEnteral,vElectrolits,vFlateEmuls,vAminokislot));
+
+            volumePerGlucose_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 7.1", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // 7.2
+//        vnutrVeniGlukoza(doseOfGlukoza, carbohydratesEnteral);
+
+    public void calcVnutrVeni(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!doseOfGlukoza_view.getText().toString().equals("") && !carbohydratesEnteral_view.getText().toString().equals("")){
+
+
+            double doseOfGlukoza = Double.parseDouble(doseOfGlukoza_view.getText().toString());
+            double carbohydrates= Double.parseDouble(carbohydratesEnteral_view.getText().toString());
+
+
+            String result = decimalFormat.format(vnutrVeniGlukoza(doseOfGlukoza, carbohydrates));
+
+            VnutrVeniGlukoza_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 7.2", Toast.LENGTH_SHORT).show();
         }
     }
 
 
+    //8.1
+
+    public void calcDefinitionOfGlukoza(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!doseOfGlukoza2_view.getText().toString().equals("") && !c1_view.getText().toString().equals("")
+                && !v_view.getText().toString().equals("") && !c2_view.getText().toString().equals("")){
+
+
+            double doseOfGlukoza = Double.parseDouble(doseOfGlukoza2_view.getText().toString());
+            double c1 = Double.parseDouble(c1_view.getText().toString());
+            double v = Double.parseDouble(v_view.getText().toString());
+            double c2 = Double.parseDouble(c2_view.getText().toString());
 
 
 
+            String result = decimalFormat.format(definitionOfVGlukoza(doseOfGlukoza, c1, v, c2)[0]);
+
+            definitionOfVGlukoza_result.setText(result);
+
+            V_view.setText(v_view.getText().toString());
+            V2_40_percentOfGlukoze_view.setText(result);
+
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 8.1", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    //8.2
+
+
+    public void calcVolume10Glukoze(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!V_view.getText().toString().equals("") && !V2_40_percentOfGlukoze_view.getText().toString().equals("")){
+
+
+            double V = Double.parseDouble(V_view.getText().toString());
+            double V2_40_percentOfGlukoza = Double.parseDouble(V2_40_percentOfGlukoze_view.getText().toString());
+
+
+            double result_double = V - V2_40_percentOfGlukoza;
+            String result = decimalFormat.format(result_double);
+
+            Volume10Glukoze_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 8.2", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // 9.1
+
+    public void calcInfusionSpeed(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!generalLiquid_view.getText().toString().equals("") && !doseOfGlukoza3_view.getText().toString().equals("")
+                && !VInfusion_view.getText().toString().equals("")){
+
+
+            double generalVInfusion = Double.parseDouble(V_view.getText().toString());
+            double doseOfGlukoza = Double.parseDouble(V2_40_percentOfGlukoze_view.getText().toString());
+            double VInfusion = Double.parseDouble(V2_40_percentOfGlukoze_view.getText().toString());
+
+
+            String result = decimalFormat.format(infusionSpeed(generalVInfusion, doseOfGlukoza, VInfusion));
+
+            InfusionSpeed_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 9.1", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    // 10.1 calcOfCalories
+//        calcOfCalories(enteralCal, uglevodi, protein, flat, weight);
+
+    public void calcOfCalories_btnLast(View view){
+
+        DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
+
+
+        if (!enteralCal_view.getText().toString().equals("") && !uglevodi_view.getText().toString().equals("")
+                && !protein_view.getText().toString().equals("") && !flat_view.getText().toString().equals("")
+                && !weight_view.getText().toString().equals("")){
+
+
+            double enteralCal = Double.parseDouble(enteralCal_view.getText().toString());
+            double uglevodi = Double.parseDouble(uglevodi_view.getText().toString());
+            double protein = Double.parseDouble(protein_view.getText().toString());
+            double flat = Double.parseDouble(flat_view.getText().toString());
+            double weight = Double.parseDouble(weight_view.getText().toString());
+
+
+            double [] result_double= calcOfCalories(enteralCal, uglevodi, protein, flat, weight);
+            String result = "Энтеральных = " + decimalFormat.format(result_double[0]) + "\n" +
+                    "Белки = " + decimalFormat.format(result_double[1]) + "\n" +
+                    "Жиры = " + decimalFormat.format(result_double[2]) + "\n" +
+                    "Всего ккал = " + decimalFormat.format(result_double[3]) + "\n"
+                    ;
+            calcOfCalories_result.setText(result);
+
+        }
+        else {
+            Toast.makeText(getApplicationContext(), "Заполните все поля пункта 9.1", Toast.LENGTH_SHORT).show();
+        }
+    }
 
 }
