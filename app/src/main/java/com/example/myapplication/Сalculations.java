@@ -11,7 +11,7 @@ public class Сalculations {
     }
 
     public static double[] calcPFCC(Mixtures mixture, double enteral){
-        double proteinEnteral = enteral * mixture.getCarbohydrates() / 100;
+        double proteinEnteral = enteral * mixture.getProtein() / 100;
         double fateEnteral = enteral * mixture.getFats() / 100;
         double carbohydratesEnteral = enteral * mixture.getCarbohydrates() / 100;
         double caloriesEnteral = enteral * mixture.getCalories() / 100;

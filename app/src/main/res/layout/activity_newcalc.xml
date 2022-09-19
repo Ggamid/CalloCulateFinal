@@ -138,17 +138,19 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
+                    android:onClick="calcLiquid_btn"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weight" />
 
                 <TextView
-                    android:id="@+id/calcLiquid"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/calcLiquid_result"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:layout_marginEnd="112dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="192dp"
                     android:fontFamily="@font/tttravels_bold"
+                    android:gravity="center"
                     android:text=""
                     android:textSize="34sp"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -272,6 +274,7 @@
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
                     android:text="Вычислить"
+                    android:onClick="calcEnteral_btn"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/countFeeding" />
 
@@ -352,6 +355,24 @@
                     app:layout_constraintTop_toBottomOf="@+id/textcalcPFCC3" />
 
 
+                <EditText
+                    android:id="@+id/voulumeFeedingInFacts"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="объем питания фактический"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:textSize="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/spinner" />
+
+
 
                 <Button
                     android:id="@+id/calcPFCC_btn"
@@ -362,8 +383,9 @@
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
                     android:text="Вычислить"
+                    android:onClick="calcPFCC_btn"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/spinner" />
+                    app:layout_constraintTop_toBottomOf="@+id/voulumeFeedingInFacts" />
 
                 <TextView
                     android:id="@+id/calcPFCC_result"
@@ -373,7 +395,7 @@
                     android:layout_marginEnd="112dp"
                     android:fontFamily="@font/tttravels_bold"
                     android:text=""
-                    android:textSize="34sp"
+                    android:textSize="14sp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/calcPFCC_btn" />
 
@@ -453,7 +475,7 @@
 
 
                 <EditText
-                    android:id="@+id/indeedK"
+                    android:id="@+id/indeedNa"
                     android:layout_width="344dp"
                     android:layout_height="51dp"
                     android:layout_marginStart="16dp"
@@ -461,7 +483,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="масса тела"
+                    android:hint="потребность в Na (ммоль/л)"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14sp"
@@ -479,12 +501,12 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="потребность в Na (ммоль/л)"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/indeedK" />
+                    app:layout_constraintTop_toBottomOf="@+id/indeedNa" />
 
 
                 <Button
@@ -496,6 +518,7 @@
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
                     android:text="Вычислить"
+                    android:onClick="sodiumCalc"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weightSodium" />
 
@@ -565,7 +588,7 @@
 
 
                 <EditText
-                    android:id="@+id/indeedNa"
+                    android:id="@+id/weightPottasium"
                     android:layout_width="344dp"
                     android:layout_height="51dp"
                     android:layout_marginStart="16dp"
@@ -582,7 +605,7 @@
 
 
                 <EditText
-                    android:id="@+id/weightPottasium"
+                    android:id="@+id/indeedK"
                     android:layout_width="344dp"
                     android:layout_height="51dp"
                     android:layout_marginStart="16dp"
@@ -596,7 +619,7 @@
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/indeedNa" />
+                    app:layout_constraintTop_toBottomOf="@+id/weightPottasium" />
 
 
                 <Button
@@ -609,7 +632,7 @@
                     android:fontFamily="@font/tttravels_bold"
                     android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/weightPottasium" />
+                    app:layout_constraintTop_toBottomOf="@+id/indeedK" />
 
                 <TextView
                     android:id="@+id/Pottasium_result"
@@ -685,7 +708,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="масса тела"
+                    android:hint="потребность в Ca (м моль)"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14sp"
@@ -703,7 +726,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="потребность в Ca (м моль)"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
@@ -797,7 +820,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="масса тела"
+                    android:hint="потребность в Mg (м моль)"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14sp"
@@ -815,7 +838,7 @@
                     android:background="@drawable/for_calc_activity"
                     android:ems="10"
                     android:fontFamily="@font/tttravels_bold"
-                    android:hint="потребность в Mg (м моль)"
+                    android:hint="масса тела"
                     android:inputType="date"
                     android:paddingLeft="10dp"
                     android:textSize="14dp"
