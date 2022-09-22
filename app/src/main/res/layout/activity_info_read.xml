@@ -101,10 +101,10 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/tttravels_bold"
 
-            android:text="Возраст в сутках" />
+            android:text="Смесь" />
 
         <EditText
-            android:id="@+id/AgeInDays"
+            android:id="@+id/Mixture"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -143,7 +143,6 @@
         android:text="вычислить"
         android:textAllCaps="false"
         android:textSize="20dp"
-        android:onClick="calculate"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -22,8 +21,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-import java.nio.charset.StandardCharsets;
-
 public class InfoReadActivity extends AppCompatActivity {
 
     @Override
@@ -31,11 +28,13 @@ public class InfoReadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info_read);
         TextView Name, LastName, FatherName;
-        EditText weight, birthday, age;
+        EditText weight, birthday, mixture_view;
         AlertDialog.Builder builder;
         ImageView button;
         Button calc;
 
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 
         calc = findViewById(R.id.button4);
@@ -44,7 +43,7 @@ public class InfoReadActivity extends AppCompatActivity {
         FatherName = findViewById(R.id.FatherNameInfloActivity);
         weight = (EditText) findViewById(R.id.Weight);
         birthday = (EditText) findViewById(R.id.BirthDayInfoActivity);
-        age = (EditText) findViewById(R.id.AgeInDays);
+        mixture_view = (EditText) findViewById(R.id.Mixture);
         button = findViewById(R.id.imageView8);
 
 
@@ -62,12 +61,12 @@ public class InfoReadActivity extends AppCompatActivity {
         LastName.setText(lastName);
         FatherName.setText(fatherName);
         weight.setText(setweight);
-        age.setText(setage);
+        mixture_view.setText(mixture);
         birthday.setText(setBirthDay);
 
 
         weight.setEnabled(false);
-        age.setEnabled(false);
+        mixture_view.setEnabled(false);
         birthday.setEnabled(false);
 
         calc.setOnClickListener(new View.OnClickListener() {
@@ -76,6 +75,10 @@ public class InfoReadActivity extends AppCompatActivity {
                 Intent intent = new Intent(InfoReadActivity.this,CalcActivity.class);
                 intent.putExtra("weightChild", setweight);
                 intent.putExtra("mixture", mixture);
+                intent.putExtra("Name", name);
+                intent.putExtra("LastName", lastName);
+                intent.putExtra("FatherName", fatherName);
+                intent.putExtra("age", setage);
                 startActivity(intent);
             }
         });

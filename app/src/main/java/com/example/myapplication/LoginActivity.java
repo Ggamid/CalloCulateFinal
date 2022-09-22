@@ -6,7 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -23,6 +26,8 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         init();
+        Window w = getWindow();
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
     public void init(){
         firebaseAuth = FirebaseAuth.getInstance();
@@ -33,13 +38,19 @@ public class LoginActivity extends AppCompatActivity {
         startActivity(new Intent(LoginActivity.this,RegActivity.class));
     }
     public void clickSingIn(View view){
-        String email = edEmail.getText().toString();
-        String password = edPassword.getText().toString();
-        firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-                    }
-                });
+        if (!edEmail.getText().toString().equals("")  && !edPassword.getText().toString().equals("")){
+            String email = edEmail.getText().toString();
+            String password = edPassword.getText().toString();
+            firebaseAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+                }
+            });
+        }else{
+            Toast.makeText(this, "Заполните поля 'Email' и 'Password'", Toast.LENGTH_SHORT).show();
+        }
+
+        }
     }
-}
+

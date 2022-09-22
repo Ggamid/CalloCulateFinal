@@ -29,9 +29,9 @@
 
     <EditText
         android:id="@+id/UserEmail"
-        android:layout_width="216dp"
-        android:layout_height="52dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="252dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="100dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/email_input"
         android:drawablePadding="8dp"
@@ -40,16 +40,15 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/UserPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="101dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="80dp"
         android:fontFamily="@font/tttravels_bold"
         android:gravity="center"
         android:text="Вход"
@@ -57,17 +56,15 @@
         android:textColor="@color/purple_button"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/UserEmail"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:layout_constraintVertical_bias="0.94" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <EditText
         android:id="@+id/UserPassword"
-        android:layout_width="218dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="64dp"
+        android:layout_width="252dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/custom_input"
         android:drawableStart="@drawable/lock_input"
         android:drawablePadding="8dp"
@@ -76,43 +73,46 @@
         android:inputType="textPersonName"
         android:minHeight="48dp"
         android:paddingLeft="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UserEmail" />
 
-    <Button
-        android:id="@+id/textView"
-        android:layout_width="179dp"
-        android:layout_height="56dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/purple_button"
-        android:minHeight="48dp"
-        android:onClick="reg"
-        android:paddingLeft="50px"
-        android:paddingTop="15px"
-        android:text="Регистрация"
-        android:textColor="@color/white"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/UserPassword">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="179dp"
-        android:layout_height="56dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginBottom="32dp"
-        android:backgroundTint="@color/purple_button"
-        android:fontFamily="@font/tttravels_bold"
-        android:onClick="clickSingIn"
-        android:text="Войти"
-        android:textAllCaps="true"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="parent" />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:backgroundTint="@color/purple_button"
+            android:fontFamily="@font/tttravels_bold"
+            android:onClick="clickSingIn"
+            android:text="Войти"
+            android:textAllCaps="true"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:backgroundTint="@color/purple_button"
+            android:onClick="reg"
+            android:paddingLeft="50px"
+            android:paddingTop="15px"
+            android:text="Регистрация"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView5"

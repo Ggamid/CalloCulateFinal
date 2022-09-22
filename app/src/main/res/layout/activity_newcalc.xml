@@ -30,12 +30,134 @@
 
             >
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@drawable/borderradius"
+                android:backgroundTint="@color/white"
+
+                >
+
+                <TextView
+                    android:id="@+id/DataChild"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="34sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/DataChild2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:text="Данные ребенка"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toEndOf="@+id/DataChild"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/NameCalc"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="52dp"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="Имя"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/DataChild2" />
+
+                <EditText
+                    android:id="@+id/LastNameCalc"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="Фамилия"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/NameCalc" />
+
+
+                <EditText
+                    android:id="@+id/FatherNameCalc"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="Отчество"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/LastNameCalc" />
+
+                <EditText
+                    android:id="@+id/ageCalc"
+                    android:layout_width="344dp"
+                    android:layout_height="51dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="28dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/for_calc_activity"
+                    android:ems="10"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:hint="возраст (в сутках)"
+                    android:inputType="date"
+                    android:paddingLeft="10dp"
+                    android:visibility="visible"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/FatherNameCalc" />
+
+
+
+
+                <Button
+                    android:id="@+id/confirm_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="120dp"
+                    android:layout_marginTop="28dp"
+                    android:backgroundTint="@color/btn_cian"
+                    android:fontFamily="@font/tttravels_bold"
+                    android:onClick="confirm_btn"
+                    android:text="подтвердить"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ageCalc" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="500dp"
                 android:background="@drawable/borderradius"
-
+                android:layout_marginTop="20dp"
                 android:backgroundTint="@color/white"
 
                 >
@@ -157,6 +279,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/button5" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -348,7 +471,7 @@
                     android:layout_marginTop="8dp"
 
                     android:layout_marginEnd="28dp"
-
+                    android:spinnerMode="dialog"
                     android:background="@drawable/for_calc_activity"
                     android:entries="@array/SmesiNames"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -897,7 +1020,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="430dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/borderradius"
                 android:backgroundTint="@color/white"
@@ -1532,7 +1655,7 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
+                android:layout_height="430dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/borderradius"
                 android:backgroundTint="@color/white"
@@ -2110,13 +2233,13 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/last"
                 android:layout_width="match_parent"
                 android:layout_height="740dp"
                 android:layout_marginTop="20dp"
                 android:background="@drawable/borderradius"
-                android:backgroundTint="@color/white"
 
-                >
+                android:backgroundTint="@color/white">
 
                 <TextView
                     android:id="@+id/textСalcOfCalories"
@@ -2253,8 +2376,8 @@
                     android:layout_marginTop="28dp"
                     android:backgroundTint="@color/btn_cian"
                     android:fontFamily="@font/tttravels_bold"
-                    android:text="Вычислить"
                     android:onClick="calcOfCalories_btnLast"
+                    android:text="Вычислить"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/weightCalcOfCalories" />
 
@@ -2272,6 +2395,18 @@
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
+            <Button
+                android:id="@+id/finalCalc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:backgroundTint="@color/btn_cian"
+                android:fontFamily="@font/tttravels_bold"
+                android:onClick="checkResult"
+                android:text="Результат"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/weightCalcOfCalories" />
 
 
         </LinearLayout>
