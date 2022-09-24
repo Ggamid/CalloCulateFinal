@@ -212,8 +212,7 @@ public class CalcActivity extends AppCompatActivity {
 
         carbohydratesEnteral_view = findViewById(R.id.carbohydratesEnteral);
 
-        c1_view = findViewById(R.id.c1);
-        c2_view = findViewById(R.id.c2);
+
         v_view = findViewById(R.id.v);
         V_view = findViewById(R.id.V);
         V2_40_percentOfGlukoze_view = findViewById(R.id.V2_40_percentOfGlukoze);
@@ -223,6 +222,7 @@ public class CalcActivity extends AppCompatActivity {
         VInfusion_view = findViewById(R.id.VInfusion);
 
         weightCalcOfCalories_view = findViewById(R.id.weightCalcOfCalories);
+        weightCalcOfCalories_view.setText(Double.toString(weight));
         enteralCal_view = findViewById(R.id.enteralCal);
         uglevodi_view = findViewById(R.id.uglevodi);
         protein_view = findViewById(R.id.protein);
@@ -526,12 +526,12 @@ public class CalcActivity extends AppCompatActivity {
 
 
         if (!weightAminokislot_view.getText().toString().equals("") && !doseOfAminokislot_view.getText().toString().equals("")
-                && !protein_view.getText().toString().equals("") && !concentrationOfAmino_view.getText().toString().equals("")){
+                && !proteinEP_view.getText().toString().equals("") && !concentrationOfAmino_view.getText().toString().equals("")){
 
 
             double weightAminokislot = Double.parseDouble(weightAminokislot_view.getText().toString());
             double doseOfAminokislot= Double.parseDouble(doseOfAminokislot_view.getText().toString());
-            double protein = Double.parseDouble(protein_view.getText().toString());
+            double protein = Double.parseDouble(proteinEP_view.getText().toString());
             double concentrationOfAmino = Double.parseDouble(concentrationOfAmino_view.getText().toString());
 
             String result = decimalFormat.format(calcAmionkislot(weightAminokislot,doseOfAminokislot,protein,concentrationOfAmino));
@@ -613,18 +613,15 @@ public class CalcActivity extends AppCompatActivity {
         DecimalFormat decimalFormat = new DecimalFormat( "#.###" );
 
 
-        if (!doseOfGlukoza2_view.getText().toString().equals("") && !c1_view.getText().toString().equals("")
-                && !v_view.getText().toString().equals("") && !c2_view.getText().toString().equals("")){
+        if (!doseOfGlukoza2_view.getText().toString().equals("") && !v_view.getText().toString().equals("")){
 
 
             double doseOfGlukoza = Double.parseDouble(doseOfGlukoza2_view.getText().toString());
-            double c1 = Double.parseDouble(c1_view.getText().toString());
             double v = Double.parseDouble(v_view.getText().toString());
-            double c2 = Double.parseDouble(c2_view.getText().toString());
 
 
 
-            String result = decimalFormat.format(definitionOfVGlukoza(doseOfGlukoza, c1, v, c2)[0]);
+            String result = decimalFormat.format(definitionOfVGlukoza(doseOfGlukoza, v)[0]);
 
             definitionOfVGlukoza_result.setText(result);
 

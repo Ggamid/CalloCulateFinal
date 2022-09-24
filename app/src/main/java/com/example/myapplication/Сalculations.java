@@ -16,7 +16,7 @@ public class Сalculations {
         double carbohydratesEnteral = enteral * mixture.getCarbohydrates() / 100;
         double caloriesEnteral = enteral * mixture.getCalories() / 100;
 
-        double[] data = new double[] {proteinEnteral, fateEnteral, carbohydratesEnteral, caloriesEnteral};
+        double[] data = new double[] {carbohydratesEnteral, proteinEnteral, fateEnteral, caloriesEnteral};
 
         return data;
     }
@@ -41,10 +41,10 @@ public class Сalculations {
     }
 
     public static double fateEmuls(double weight, double doseOfFate, double fateEP, double concentrationOfFateEmulsion){
-        return (weight * doseOfFate - fateEP * 100) / concentrationOfFateEmulsion;
+        return (weight * doseOfFate - fateEP * 100) / (concentrationOfFateEmulsion/100);
     }
     public static double calcAmionkislot(double weight, double doseOfAminokislot, double proteinEP, double concentrationOfAmino){
-        return (weight*doseOfAminokislot-proteinEP*100)/concentrationOfAmino;
+        return (weight*doseOfAminokislot-proteinEP*100)/(concentrationOfAmino/100);
     }
     public static double volumePerGlucose(double generalLiquid, double vEnteral, double vElectolits, double vFlateEmuls, double vAmionkislot){
         return generalLiquid - vEnteral - vElectolits - vFlateEmuls - vAmionkislot;
@@ -52,8 +52,8 @@ public class Сalculations {
     public static double vnutrVeniGlukoza(double doseOfGlukoza, double carbohydratesEnteral){
         return  doseOfGlukoza - carbohydratesEnteral;
     }
-    public static double[] definitionOfVGlukoza(double doseOfGlukoza, double c1, double v, double c2){
-        double v2 = (doseOfGlukoza * 100 - c1 * v) / c2 - c1;
+    public static double[] definitionOfVGlukoza(double doseOfGlukoza, double v){
+        double v2 = (doseOfGlukoza * 100 - 10 * v) / 30;
         double v1 = v - v2;
         double[] data = new double[] {v2, v1};
         return data;

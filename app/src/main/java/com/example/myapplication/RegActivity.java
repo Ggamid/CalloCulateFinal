@@ -33,14 +33,17 @@ public class RegActivity extends AppCompatActivity {
         edPassword = findViewById(R.id.UserPassword);
     }
     public void clickReg(View view){
-        String email = edEmail.getText().toString();
-        String password = edPassword.getText().toString();
-        firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        startActivity(new Intent(RegActivity.this,MainActivity.class));
-                    }
-                });
+        if (!edEmail.getText().toString().equals("")  && !edPassword.getText().toString().equals("")) {
+
+            String email = edEmail.getText().toString();
+            String password = edPassword.getText().toString();
+            firebaseAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    startActivity(new Intent(RegActivity.this, MainActivity.class));
+                }
+            });
+        }
 
     }
 }
